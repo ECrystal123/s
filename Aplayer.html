@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+</head>
+<body>
+    <header>
+        <h1></h1>
+        <p></p>
+    </header>
+    
+    <div id="aplayer"></div>
+    
+    <footer>
+        <p></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script>
+        // 音乐数据
+        const musicData = [
+            {
+                title: "CYCLES",
+                artist: "Masayoshi Minoshima,綾倉盟",
+                url: "CYCLES.mp3",
+                cover: "CYCLES.jpeg",
+                lrc: 'CYCLES.lrc'
+            },
+            {
+                title: "Trip",
+                artist: "Axero",
+                url: "Trip.mp3",
+                cover: "Trip.jpeg",
+                lrc: 'Trip - Axero.lrc'
+            }
+        ];
+        
+        // 初始化APlayer
+        const ap = new APlayer({
+            container: document.getElementById('aplayer'),
+            fixed: false,
+            mini: false,
+            autoplay: false,
+            theme: '#b7daff',
+            loop: 'all',
+            order: 'list',
+            preload: 'auto',
+            volume: 0.7,
+            mutex: true,
+            lrcType: 3,
+            audio: musicData
+        });
+    </script>
+</body>
+</html>
