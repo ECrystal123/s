@@ -29,13 +29,13 @@
                 cover: "photos/CYCLES.jpeg",
                 lrc: 'lrc/CYCLES.lrc'
             },
-                                    {
-                            title: "トリカゴ",
-                            artist: "XX:me",
-                            url: "music/トリカゴ.mp3",
-                            cover: "photos/トリカゴ.jpeg",
-                            lrc: 'lrc/トリカゴ.lrc'
-                        },
+            {
+                title: "トリカゴ",
+                artist: "XX:me",
+                url: "music/トリカゴ.mp3",
+                cover: "photos/トリカゴ.jpeg",
+                lrc: 'lrc/トリカゴ.lrc'
+            },
             {
                 title: "光るなら",
                 artist: "Goose House",
@@ -43,14 +43,13 @@
                 cover: "photos/光るなら.jpeg",
                 lrc: 'lrc/光るなら.lrc'
             },
-
             {
-    title: "The Right Path",
-    artist: "Thomas Greenberg",
-    url: "music/The Right Path.mp3",
-    cover: "photos/The Right Path.jpeg",
-    lrc: 'lrc/NO.lrc'
-},
+                title: "The Right Path",
+                artist: "Thomas Greenberg",
+                url: "music/The Right Path.mp3",
+                cover: "photos/The Right Path.jpeg",
+                lrc: 'lrc/NO.lrc'
+            },
             {
                 title: "Trip",
                 artist: "Axero",
@@ -74,6 +73,11 @@
             mutex: false,
             lrcType: 3,
             audio: musicData
+        });
+
+        // 添加错误处理
+        ap.on('error', function(e) {
+            console.error('播放器错误:', e);
         });
     </script>
 </body>
