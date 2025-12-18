@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <!-- 1. 确保引入正确的CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    <style>
+        /* 2. 为吸底模式预留空间 */
+        body {
+            margin: 0;
+            padding-bottom: 100px; /* 预留播放器高度 */
+            font-family: Arial, sans-serif;
+        }
+        
+        /* 3. 确保播放器容器可见 */
+        #aplayer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- 4. 确保容器存在 -->
+    <div id="aplayer"></div>
+
+    <!-- 5. 确保引入正确的JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script>
+        // 6. 确保DOM加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            const ap = new APlayer({
+                container: document.getElementById('aplayer'),
+                fixed: true, 
+                lrcType: 3,
+                audio: [{
+                    title: "CYCLES",
+    artist: "Masayoshi Minoshima,綾倉盟",
+    url: "CYCLES.mp3",
+    cover: "CYCLES.jpeg",
+    lrc: 'CYCLES.lrc'
+},
+{
+    title: "Trip",
+    artist: "Axero",
+    url: "Trip.mp3",
+    cover: "Trip.jpeg",
+    lrc: 'Trip - Axero.lrc'
+                }]
+            });
+            
+            // 7. 错误处理
+            ap.on('error', function(err) {
+                console.error('播放器错误:', err);
+                alert('播放器初始化失败: ' + err.message);
+            });
+        });
+    </script>
+</body>
+</html>
